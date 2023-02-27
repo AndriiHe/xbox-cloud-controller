@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  width: 30rem;
+}
+
+#xcloud-controller-content-block {
+  right: 0;
+  top: 0;
+  position: fixed;
+}

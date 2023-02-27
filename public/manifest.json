@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "short_name": "XBOX Cloud Controller",
+  "name": "XBOX Cloud Controller",
+  "description": "Controller emulator for XBOX Cloud gaming",
+  "action": {
+    "default_title": "XBOX Cloud Controller",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.xbox.com/*", "https://gamepad-tester.com/*"],
+      "js": ["inject.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "contentScript.js"
+      ],
+      "matches": [
+        "https://www.xbox.com/*",
+        "https://gamepad-tester.com/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "images/logo.png",
+    "48": "images/logo.png",
+    "128": "images/logo.png"
+  },
+  "options_page": "options.html",
+  "permissions": ["storage"]
+}
